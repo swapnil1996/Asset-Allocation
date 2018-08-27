@@ -8,7 +8,7 @@
         Title="Questions" Height="506" Width="800">
     <ScrollViewer>
         <ScrollViewer.Background>
-         <ImageBrush ImageSource="C:\Users\Grad18\Desktop\backG.jpg" Opacity="0.6"/>
+            <ImageBrush ImageSource="C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\pictures\backG.jpg" Opacity="0.6"/>
         </ScrollViewer.Background>
         <StackPanel>
             <TextBlock Text="Questionnaire for Risk Appetite Calculation" FontSize="25" FontWeight="Bold" Height="50" HorizontalAlignment="Center"/>
