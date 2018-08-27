@@ -1,0 +1,130 @@
+﻿<Window x:Class="Questionnaire.Questions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Questionnaire"
+        mc:Ignorable="d"
+        Title="Questions" Height="506" Width="800">
+    <ScrollViewer>
+        <ScrollViewer.Background>
+         <ImageBrush ImageSource="C:\Users\Grad18\Desktop\backG.jpg" Opacity="0.6"/>
+        </ScrollViewer.Background>
+        <StackPanel>
+            <TextBlock Text="Questionnaire for Risk Appetite Calculation" FontSize="25" FontWeight="Bold" Height="50" HorizontalAlignment="Center"/>
+            <TextBlock Text="Choose the response that best describes you – there are no 'right' or 'wrong' answers. Just have fun!" FontSize="17"  Height="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="When you're done, check the scoring grid to interpret your Risk Appetite/Profile." FontSize="17"  Height="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="1.  In one word, how do you perceive risk? " FontSize="16" FontWeight="Bold" Margin="10,0,0,0"/>
+
+            <StackPanel  Margin="38,0,0,0">
+
+                <RadioButton Name="a1" Content="Loss" Height="25"/>
+                <RadioButton Name="b1" Content="Uncertainty" Height="25"/>
+                <RadioButton Name="c1" Content="Opportunity" Height="25"/>
+                <RadioButton Name="d1" Content="Thrill" Height="25"/>
+            </StackPanel>
+
+            <TextBlock Text="2.  You are financially responsible for:" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="10,0,0,0"/>
+
+            <StackPanel  Margin="38,0,0,0">
+
+                <RadioButton Name="a2" Content="Only yourself" Height="25"/>
+                <RadioButton Name="b2" Content="1 or 2 other people besides yourself" Height="25"/>
+                <RadioButton Name="c2" Content="3 or 4 other persons besides yourself" Height="25"/>
+                <RadioButton Name="d2" Content="More than 4 persons besides yourself" Height="25"/>
+            </StackPanel>
+
+            <TextBlock Text="3.   You are on a TV game show and can choose one of the following. Which would you take? " FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a3" Content="INR 1,00,000 in cash" Height="25"/>
+            <RadioButton Name="b3" Content="A 50% chance at winning INR 2,50,000" Height="25"/>
+            <RadioButton Name="c3" Content="A 25% chance at winning INR 5,00,000" Height="25"/>
+            <RadioButton Name="d3" Content="A 5% chance at winning INR 25,00,000" Height="25"/>
+        </StackPanel>
+
+        <TextBlock Text="4.  You are offered a job by a company with a bright future. Which compensation option would you choose?" TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a4" Content="A 3-year job guarantee." Height="25"/>
+            <RadioButton Name="b4" Content="An upfront bonus of INR 1,00,000." Height="25"/>
+            <RadioButton Name="c4" Content="A 10% yearly increase on your salary of INR 4,00,000." Height="25"/>
+            <RadioButton Name="d4" Content="employee stock options with a current value of INR 1,00,000 and prospects for further appreciation." Height="25"/>
+        </StackPanel>
+            <TextBlock Text="5.   If you unexpectedly received INR 500,000 to invest, what would you do?  " FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a5" Content="Deposit it in a bank account or a money market account" Height="25"/>
+            <RadioButton Name="b5" Content="Invest it in safe high quality bonds or bond mutual funds" Height="25"/>
+            <RadioButton Name="c5" Content="Invest it in stocks or stock mutual funds" Height="25"/>
+            <RadioButton Name="d5" Content="Invest it in stock or commodity derivatives" Height="25"/>
+        </StackPanel>
+
+            <TextBlock Text="6.  Which of these statements would best describe your attitude about the next three month performance of this investment? " FontSize="16" TextWrapping="Wrap" FontWeight="Bold"  Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a6" Content="I wouldn't worry about market fluctuations in that time frame." Height="25"/>
+            <RadioButton Name="b6" Content="If my investment declined greater than 20 percent I'd be concerned." Height="25"/>
+            <RadioButton Name="c6" Content="If my investment declined greater than 10 percent I'd be concerned." Height="25"/>
+            <RadioButton Name="d6" Content="I can only tolerate small short-term fluctuations in my investment." Height="25"/>
+            <RadioButton Name="e6" Content="I'd have a hard time accepting any investment declines." Height="25"/>
+        </StackPanel>
+
+            <TextBlock Text="7.   You have just finished saving for a 'once-in-a-lifetime' vacation. Three weeks before you plan to leave, you lose your job. You would: " FontSize="16" TextWrapping="Wrap" FontWeight="Bold" Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a7" Content="Cancel the vacation" Height="25"/>
+            <RadioButton Name="b7" Content="Take a much more modest vacation" Height="25"/>
+            <RadioButton Name="c7" Content="Go as scheduled, reasoning that you need the time to prepare for a job search" Height="25"/>
+            <RadioButton Name="d7" Content="Extend your vacation, because this might be your last chance to go first-class" Height="25"/>
+        </StackPanel>
+
+        <TextBlock Text="8.   You have invested in shares that you expect will become 5-baggers in 2-3 years. These share prices drop 30% soon after you buy them. You:" TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a8" Content="Sell your shares immediately" Height="25"/>
+            <RadioButton Name="b8" Content="Observe the market for a while." Height="25"/>
+            <RadioButton Name="c8" Content="See your cash flow at the end of the year and buy more if the prices of these shares are still low." Height="25"/>
+            <RadioButton Name="d8" Content="Average your cost by buying more." Height="25"/>
+        </StackPanel>
+
+            <TextBlock Text="9.   If you were to allocate 100% of your investment into only one of the five possible investments below, which would you choose ?" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+                <TextBlock Text="                       Worst Year         Best Year          Average Year" FontSize="16" Height="25" Margin="10,0,0,0"/> 
+                <RadioButton Name="a9" Content="Investment A 	    	       4 % 		                           6 % 	                               	 8 % " Height="25"/>
+                <RadioButton Name="b9" Content="Investment B 	    	       2 % 		                           8 % 	                               	 14 % " Height="25"/>
+                <RadioButton Name="c9" Content="Investment C 	    	      -5 % 		                          10 % 	                               20 % " Height="25"/>
+                <RadioButton Name="d9" Content="Investment D 	    	     -15 % 		                         12 % 	                               25 % " Height="25"/>
+                <RadioButton Name="e9" Content="Investment E 	    	     -20 % 		                          15 % 	                               30 % " Height="25"/>
+        </StackPanel>
+
+            <TextBlock Text="10.  Your college peer, an experienced mining engineer, wants a group of investors to fund an exploratory gold mining venture. The venture could pay back 100 to 200 times the investment if successful but if the mine is a bust, the entire investment will be gone. The estimated chance of success is 20%. If you had the money, how much would you invest? " TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a10" Content="Nothing" Height="25"/>
+            <RadioButton Name="b10" Content="A month's salary" Height="25"/>
+            <RadioButton Name="c10" Content="Six month's salary" Height="25"/>
+            <RadioButton Name="d10" Content="10% of your assets	" Height="25"/>
+        </StackPanel>
+
+            <TextBlock Text="11.   Some experts are predicting prices of assets such as gold, jewels, collectibles, and real estate (hard assets) to increase in value; bond prices may fall, however, experts tend to agree that government bonds are relatively safe. Most of your investment assets are now in high interest government bonds. What would you do?" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="10,0,0,0"/>
+
+        <StackPanel  Margin="38,0,0,0">
+
+            <RadioButton Name="a11" Content="Hold the bonds" Height="25"/>
+            <RadioButton Name="b11" Content="Sell the bonds, put half the proceeds into money market accounts, and the other half into hard assets." Height="25"/>
+            <RadioButton Name="c11" Content="Sell the bonds and put the total proceeds into hard assets" Height="25"/>
+            <RadioButton Name="d11" Content="Sell the bonds, put all the money into hard assets, and borrow additional money to buy more" Height="25"/>
+        </StackPanel>
+        <Button Name="Submit" Width="60"  Content="Submit"  Click="Insert_Click" Height="22" VerticalAlignment="Top" Margin="40"/>
+    </StackPanel>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,17 @@
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\bin\Debug\Questionnaire.exe.config
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\bin\Debug\Questionnaire.exe
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\bin\Debug\Questionnaire.pdb
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.csprojAssemblyReference.cache
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\MainWindow.g.cs
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questions.g.cs
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\App.g.cs
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire_MarkupCompile.cache
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire_MarkupCompile.lref
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\MainWindow.baml
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questions.baml
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.g.resources
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.Properties.Resources.resources
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.csproj.GenerateResource.cache
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.csproj.CoreCompileInputs.cache
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.exe
+C:\Users\Grad18\source\repos\Questionnaire\Questionnaire\obj\Debug\Questionnaire.pdb
