@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
-
+/* --------------Please change uname and cnworth to global uname and networth----------------------- */
 namespace Questionnaire
 {
     /// <summary>
@@ -27,7 +27,7 @@ namespace Questionnaire
         }
         private void Insert_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Insert Button Clicked");
+            //MessageBox.Show("Insert Button Clicked");
             /*string code = this.txtcCode.Text;
             string fname = this.txtfname.Text;
             string lname = this.txtlname.Text;
@@ -250,9 +250,54 @@ namespace Questionnaire
             {
                 ans11 = 2*weight11;
             }
+            string dob;
+            int dob_year = 0;
+            int age = 0;
 
-            int risk_score = ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8 + ans9 + ans10 + ans11;
-            float weight_sum = weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10 + weight11;
+            /* --------------Please change this to global uname and networth----------------------- */
+
+            string uname = "hugh244jack";
+            int cnworth = 10000;
+            SqlConnection con1 = null;
+            try
+            {
+                con1 = new SqlConnection(@"Data Source=Grad18-HP ; User ID=sa; Password=sa123 ; INITIAL CATALOG=ASSET_ALLOCATION; Trusted_Connection=Yes");
+                con1.Open();
+                string sql_dob_fetch = "Select * from PERSONAL_INFO where USERNAME='" + uname +"'";
+                
+                using (SqlCommand command = new SqlCommand(sql_dob_fetch, con1))
+                {
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = command;
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    dob = dataSet.Tables[0].Rows[0]["DOB"].ToString();
+                    dob = dob.Substring(6, 4);
+                    dob_year = int.Parse(dob);
+                    if (dob_year >= 2000)
+                        age = 2018 - dob_year;
+                    else
+                        age = 2000 - dob_year + 18;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            int age_score = 0;
+            int age_weight = 5;
+            if (age < 30)
+                age_score = 5*age_weight;
+            else if (age_score < 45)
+                age_score = 4*age_weight;
+            else if (age_score < 60)
+                age_score = 3*age_weight;
+            else
+                age_score = 2*age_weight;
+
+            int risk_score = ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8 + ans9 + ans10 + ans11 + age_score;
+            float weight_sum = weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10 + weight11 + age_weight;
             float risk_score_normalized = risk_score/weight_sum;
             risk_score_normalized =  (float)Math.Round(risk_score_normalized, 2);
             int risk_ID = 0;
@@ -267,17 +312,16 @@ namespace Questionnaire
             else
                 risk_ID = 5;
 
-            MessageBox.Show(risk_score.ToString());
-            MessageBox.Show(weight_sum.ToString());
-            MessageBox.Show(risk_score_normalized.ToString());
+            //MessageBox.Show(risk_score.ToString());
+            //MessageBox.Show(weight_sum.ToString());
+            //MessageBox.Show(risk_score_normalized.ToString());
             //MessageBox.Show(ans1.ToString());
             //string gender = thi
             /*string ccode = (this.CountryCode.SelectedItem as ComboBoxItem).Content.ToString();
             string str = string.Format(" code: {0}\n name: {1} {2}\n bdate: {3}\n app date: {4}\n country code: {5}\n gender: {6}", code, fname, lname, bdate, adate, ccode, gender);
             MessageBox.Show(str);
             */
-            string uname = "anil";
-            int cnworth = 10000;
+            
             SqlConnection con = null;
             try
             {
