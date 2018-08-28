@@ -230,10 +230,7 @@ namespace Questionnaire
             {
                 ans10 = 5*weight10;
             }
-            else if (this.e6.IsChecked == true)
-            {
-                ans6 = 1*weight10;
-            }
+            
 
             int ans11 = 0;
             int weight11 = 3;
@@ -255,7 +252,9 @@ namespace Questionnaire
             }
 
             int risk_score = ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8 + ans9 + ans10 + ans11;
-            int risk_score_normalized = risk_score / (weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10 + weight11);
+            float weight_sum = weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10 + weight11;
+            float risk_score_normalized = risk_score/weight_sum;
+            risk_score_normalized =  (float)Math.Round(risk_score_normalized, 2);
             int risk_ID = 0;
             if (risk_score_normalized <= 1)
                 risk_ID = 1;
@@ -268,20 +267,23 @@ namespace Questionnaire
             else
                 risk_ID = 5;
 
+            MessageBox.Show(risk_score.ToString());
+            MessageBox.Show(weight_sum.ToString());
+            MessageBox.Show(risk_score_normalized.ToString());
             //MessageBox.Show(ans1.ToString());
             //string gender = thi
             /*string ccode = (this.CountryCode.SelectedItem as ComboBoxItem).Content.ToString();
             string str = string.Format(" code: {0}\n name: {1} {2}\n bdate: {3}\n app date: {4}\n country code: {5}\n gender: {6}", code, fname, lname, bdate, adate, ccode, gender);
             MessageBox.Show(str);
             */
-            string uname = "swapnil";
+            string uname = "anil";
             int cnworth = 10000;
             SqlConnection con = null;
             try
             {
-                con = new SqlConnection(@"Data Source=Grad79-HP ; User ID=sa; Password=sa123 ; INITIAL CATALOG=ASSET_ALLOCATION; Trusted_Connection=Yes");
+                con = new SqlConnection(@"Data Source=Grad18-HP ; User ID=sa; Password=sa123 ; INITIAL CATALOG=ASSET_ALLOCATION; Trusted_Connection=Yes");
                 con.Open();
-                string sql = "INSERT INTO RISK_PROFILE" + "(USERNAME,RISK_ID,CLIENTNETWORTH,RISK_SCORE) values " + "(@UNAME,@RISK_ID,@CNWORTH,@RISK_SCORE)";
+                string sql = "INSERT INTO RISK_PROFILE values " + "(@UNAME,@RISK_ID,@RISK_SCORE,@CNWORTH);";
                 using (SqlCommand command = new SqlCommand(sql, con))
                 {
                     SqlParameter parameter = new SqlParameter
@@ -308,7 +310,7 @@ namespace Questionnaire
                     {
                         ParameterName = "@CNWORTH",
                         Value = cnworth,
-                        SqlDbType = SqlDbType.Int,
+                        SqlDbType = SqlDbType.Decimal,
                         Size = 9
 
                     };
@@ -318,8 +320,8 @@ namespace Questionnaire
                     {
                         ParameterName = "@RISK_SCORE",
                         Value = risk_score_normalized,
-                        SqlDbType = SqlDbType.Int,
-                        Size = 5
+                        SqlDbType = SqlDbType.Float,
+                        Size = 7
 
                     };
                     command.Parameters.Add(parameter3);
